@@ -1,9 +1,9 @@
 package com.liner.preferencemanagerdemo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.liner.preferencemanager.PreferenceManager;
 
@@ -14,6 +14,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+@SuppressWarnings("unchecked")
 public class MainActivity extends AppCompatActivity {
     private String saveString;
     private int saveInt;
@@ -36,28 +37,28 @@ public class MainActivity extends AppCompatActivity {
         loadData();
     }
 
-    private void loadData(){
+    private void loadData() {
         saveString = PreferenceManager.get("saveString", "null");
         saveInt = PreferenceManager.get("saveInt", -1);
         saveBoolean = PreferenceManager.get("saveBoolean", false);
-        saveFloat = PreferenceManager.get("saveFloat", 0f);;
-        saveLong = PreferenceManager.get("saveLong", 0L);;
-        saveBytes = PreferenceManager.get("saveBytes", new byte[]{});;
+        saveFloat = PreferenceManager.get("saveFloat", 0f);
+        saveLong = PreferenceManager.get("saveLong", 0L);
+        saveBytes = PreferenceManager.get("saveBytes", new byte[]{});
         myObject = PreferenceManager.getObject("myObject", MyObject.class);
         myObjectList = PreferenceManager.getList("myObjectList", MyObject.class);
         stringSet = PreferenceManager.getSet("stringSet");
         myBooleanHashMap = (HashMap<String, Boolean>) PreferenceManager.getMap("myBooleanHashMap", false);
         myStringHashMap = (HashMap<String, String>) PreferenceManager.getMap("myStringHashMap", "");
         Log.d("MainActivity", "loadData: {\n" +
-                "\nSaved string key={saveString}"+" value = ["+saveString+"]"+
-                "\nSaved int key={saveInt}"+" value = ["+saveInt+"]"+
-                "\nSaved bool key={saveBoolean}"+" value = ["+saveBoolean+"]"+
-                "\nSaved float key={saveFloat}"+" value = ["+saveFloat+"]"+
-                "\nSaved long key={saveLong}"+" value = ["+saveLong+"]"+
-                "\nSaved bytes key={saveBytes}"+" value = ["+ Arrays.toString(saveBytes) +"]"+
-                "\nSaved object key={myObject}"+" value = ["+myObject.toString()+"]"+
-                "\nSaved hash map key={myBooleanHashMap}"+" value = ["+myBooleanHashMap.toString()+"]"+
-                "\nSaved hash map key={myStringHashMap}"+" value = ["+myStringHashMap.toString()+"]"+
+                "\nSaved string key={saveString}" + " value = [" + saveString + "]" +
+                "\nSaved int key={saveInt}" + " value = [" + saveInt + "]" +
+                "\nSaved bool key={saveBoolean}" + " value = [" + saveBoolean + "]" +
+                "\nSaved float key={saveFloat}" + " value = [" + saveFloat + "]" +
+                "\nSaved long key={saveLong}" + " value = [" + saveLong + "]" +
+                "\nSaved bytes key={saveBytes}" + " value = [" + Arrays.toString(saveBytes) + "]" +
+                "\nSaved object key={myObject}" + " value = [" + myObject.toString() + "]" +
+                "\nSaved hash map key={myBooleanHashMap}" + " value = [" + myBooleanHashMap.toString() + "]" +
+                "\nSaved hash map key={myStringHashMap}" + " value = [" + myStringHashMap.toString() + "]" +
                 "\n}");
     }
 

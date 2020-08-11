@@ -17,11 +17,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * @package com.liner.linerlauncher.util
- * @created at 26.07.2020 - 6:17
- * @autor Line'R (serinity320@gmail.com)
- **/
 @SuppressWarnings("unchecked | unused")
 @SuppressLint("StaticFieldLeak")
 public class PreferenceManager {
@@ -233,7 +228,7 @@ public class PreferenceManager {
 
     private static void checkInitialization(){
         if(preferenceManager == null)
-            throw new NullPointerException("Warning! Did you init manager in your Application class?");
+            throw new RuntimeException("Warning! Did you init manager in your Application class?");
     }
 
     public static class ListTypeToken<T> implements ParameterizedType {
